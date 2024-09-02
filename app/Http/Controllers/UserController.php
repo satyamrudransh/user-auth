@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        return UserResource::collection(User::all());
+        // return UserResource::collection(User::all());
 
         try {
             if ($request->has('limit')) {

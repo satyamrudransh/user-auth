@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', 'UserController@login')->name('login');
 Route::post('/register', 'UserController@register');
 
-Route::middleware('api.auth')->group(function () {
+Route::middleware(['api.auth','throttle:api'])->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
