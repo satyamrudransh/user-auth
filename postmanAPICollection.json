@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "29eff83d-2219-467f-a5d4-15a06956c4f0",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28183887"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "satyam",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "satyam@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pass@1234",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "Pass@1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8060/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "app",
+							"value": "1234562",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "satyam@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pass@1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8060/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "app",
+							"value": "1234562",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5b29504480c6d210d982b1cfe15a5afdf4c0564a469442cf1c92b8c38a71958f39f607773dd733fe",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "satyam",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "satyam@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pass@1234",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "Pass@1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8060/api/all-users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"all-users"
+					],
+					"query": [
+						{
+							"key": "app",
+							"value": "1234562",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5b29504480c6d210d982b1cfe15a5afdf4c0564a469442cf1c92b8c38a71958f39f607773dd733fe",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 5000,\n    \"currency\": \"usd\",\n    \"source\": \"tok_visa\",\n    \"customer\": {\n        \"name\": \"John Doe\",\n        \"address\": {\n            \"line1\": \"123 Main Street\",\n            \"city\": \"Mumbai\",\n            \"state\": \"MH\",\n            \"country\": \"IN\",\n            \"postal_code\": \"400001\"\n        }\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8060/api/charge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8060",
+					"path": [
+						"api",
+						"charge"
+					],
+					"query": [
+						{
+							"key": "app",
+							"value": "1234562",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
